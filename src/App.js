@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
 
 function App() {
 	return (
 		<div>
-			<button style={{ backgroundColor: 'red' }}>Change to blue</button>
+			<ColoredButton>Change to blue</ColoredButton>
 		</div>
 	);
 }
 
 export default App;
+
+const ColoredButton = styled.button`
+	background-color: red;
+`;
