@@ -17,10 +17,13 @@ function App() {
 			>
 				Change to {newButtonColor}
 			</ColoredButton>
+			<br />
 			<CheckboxButton
 				type="checkbox"
+				id="disable-button"
 				onChange={(e) => setIsDisabled(e.target.checked)}
 			/>
+			<label htmlFor="disable-button">Disable button</label>
 		</div>
 	);
 }
