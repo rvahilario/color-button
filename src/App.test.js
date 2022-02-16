@@ -17,7 +17,7 @@ test('button turns blue when clicked', () => {
 	expect(colorButton.textContent).toMatch(/change to red/i);
 });
 
-test('checkbox initial conditions', () => {
+test('checkbox initial conditions, button enabled and checkbox disabled', () => {
 	render(<App />);
 
 	const colorButton = screen.getByRole('button', { name: /change to blue/i });
@@ -27,7 +27,7 @@ test('checkbox initial conditions', () => {
 	expect(checkboxButton).not.toBeChecked();
 });
 
-test('checkbox funcionality', () => {
+test('checkbox disables button on first click and enables button on second click', () => {
 	render(<App />);
 
 	const colorButton = screen.getByRole('button', { name: /change to blue/i });
