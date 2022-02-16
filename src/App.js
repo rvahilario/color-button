@@ -14,6 +14,7 @@ function App() {
 			>
 				Change to {newButtonColor}
 			</ColoredButton>
+			<CheckboxButton type="checkbox" />
 		</div>
 	);
 }
@@ -23,3 +24,5 @@ export default App;
 const ColoredButton = styled.button`
 	background-color: ${(props) => (props.background ? props.background : 'red')};
 `;
+
+const CheckboxButton = styled.input``;
