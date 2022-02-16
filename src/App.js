@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
 
 function App() {
+	const [buttonColor, setButtonColor] = useState('red');
+	const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+
 	return (
 		<div>
-			<ColoredButton>Change to blue</ColoredButton>
+			<ColoredButton
+				background={buttonColor}
+				onClick={() => setButtonColor(newButtonColor)}
+			>
+				Change to {newButtonColor}
+			</ColoredButton>
 		</div>
 	);
 }
@@ -12,5 +21,5 @@ function App() {
 export default App;
 
 const ColoredButton = styled.button`
-	background-color: red;
+	background-color: ${(props) => (props.background ? props.background : 'red')};
 `;
