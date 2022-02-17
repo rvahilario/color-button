@@ -6,16 +6,20 @@ function App() {
 	const [buttonColor, setButtonColor] = useState('red');
 	const [isDisabled, setIsDisabled] = useState(false);
 
-	const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+	const nextEnabledButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+	const disabledButtonColor = 'gray';
+	const newButtonColor = isDisabled ? disabledButtonColor : buttonColor;
 
 	return (
 		<div>
 			<ColoredButton
-				background={buttonColor}
-				onClick={() => setButtonColor(newButtonColor)}
+				background={newButtonColor}
 				disabled={isDisabled}
+				onClick={() => {
+					setButtonColor(nextEnabledButtonColor);
+				}}
 			>
-				Change to {newButtonColor}
+				Change to {nextEnabledButtonColor}
 			</ColoredButton>
 			<br />
 			<CheckboxButton
