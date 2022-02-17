@@ -7,24 +7,25 @@ export function replaceCamelCaseWithSpaces(colorName) {
 }
 
 function App() {
-	const [buttonColor, setButtonColor] = useState('red');
+	const [buttonColor, setButtonColor] = useState('MediumVioletRed');
 	const [isDisabled, setIsDisabled] = useState(false);
 
-	const nextEnabledButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+	const nextEnabledButtonColor =
+		buttonColor === 'MediumVioletRed' ? 'MidnightBlue' : 'MediumVioletRed';
 	const disabledButtonColor = 'gray';
 	const newButtonColor = isDisabled ? disabledButtonColor : buttonColor;
 
 	return (
 		<div>
-			<ColoredButton
+			<ColoMediumVioletRedButton
 				background={newButtonColor}
 				disabled={isDisabled}
 				onClick={() => {
 					setButtonColor(nextEnabledButtonColor);
 				}}
 			>
-				Change to {nextEnabledButtonColor}
-			</ColoredButton>
+				Change to {replaceCamelCaseWithSpaces(nextEnabledButtonColor)}
+			</ColoMediumVioletRedButton>
 			<br />
 			<CheckboxButton
 				type="checkbox"
@@ -38,8 +39,9 @@ function App() {
 
 export default App;
 
-const ColoredButton = styled.button`
-	background-color: ${(props) => (props.background ? props.background : 'red')};
+const ColoMediumVioletRedButton = styled.button`
+	background-color: ${(props) =>
+		props.background ? props.background : 'MediumVioletRed'};
 `;
 
 const CheckboxButton = styled.input``;
